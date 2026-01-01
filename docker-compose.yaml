@@ -1,0 +1,11 @@
+services:
+  gateway:
+    image: nginx:latest
+    volumes:
+      - ./api-gateway/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:80"
+  test-service:
+    build: ./test-service
+    ports:
+      - "8081:8081"
